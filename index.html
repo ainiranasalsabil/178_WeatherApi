@@ -33,7 +33,19 @@
     <p>Kota/Kecamatan = <span id="kota"></span></p>
     <p>Longitude = <span id="long"></span></p>
     <p>Latitude = <span id="lat"></span></p>
+     
+    <script>
+        // Saat tombol dengan id "btnGet" diklik, jalankan fungsi berikut
+        $("#btnGet").click(function() {
+            // Ambil teks dari input dengan id "inputLokasi" dan hilangkan spasi di depan/belakang
+            const lokasi = $("#inputLokasi").val().trim();
 
+            // Jika input kosong, tampilkan peringatan dan hentikan proses
+            if (lokasi === "") {
+                alert("Silakan masukkan nama lokasi terlebih dahulu!");
+                return; // keluar dari fungsi
+            }
+    </script> 
 
 
 </body>
