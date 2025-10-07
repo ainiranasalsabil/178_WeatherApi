@@ -48,5 +48,29 @@
         // Membuat URL API untuk mengambil data cuaca berdasarkan kota yang dimasukkan
             const urlapi = `https://api.weatherapi.com/v1/current.json?key=3322120215024b6e81c70005250710&q=${lokasi}&aqi=no`;
 
+            $.ajax({
+                url: urlapi, // URL API yang akan diambil
+                method: "GET", // Metode permintaan: GET untuk mengambil data
+                success: function(data) {
+                    // Jika data berhasil didapat, tampilkan informasi cuaca di elemen HTML
+
+                    // Menampilkan suhu dalam Celcius
+                    $("#suhuC").text(data.current.temp_c);
+
+                    // Menampilkan suhu dalam Fahrenheit
+                    $("#suhuF").text(data.current.temp_f);
+
+                    // Menampilkan tingkat kelembapan udara
+                    $("#kelembapan").text(data.current.humidity);
+
+                    // Menampilkan informasi lokasi dari hasil API
+                    $("#negara").text(data.location.country);
+                    $("#provinsi").text(data.location.region);
+                    $("#kota").text(data.location.name);
+                    $("#long").text(data.location.lon);
+                    $("#lat").text(data.location.lat);
+                },
+
+
     </script> 
 </body>
