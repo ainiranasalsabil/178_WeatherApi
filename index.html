@@ -70,7 +70,12 @@
                     $("#long").text(data.location.lon);
                     $("#lat").text(data.location.lat);
                 },
-
-
+                 error: function() {
+                    // Jika terjadi kesalahan (misal nama kota tidak ditemukan),
+                    // maka tampilkan pesan peringatan ke pengguna
+                    alert("Data tidak ditemukan. Coba nama lokasi lain!");
+                }
+            });
+        });
     </script> 
 </body>
